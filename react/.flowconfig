@@ -1,0 +1,23 @@
+[ignore]
+.*/__tests__/.*
+.*/node_modules/.*
+
+[libs]
+./node_modules/fbjs/flow/lib
+
+[options]
+module.system=haste
+module.use_strict=true
+module.file_ext=.js
+module.file_ext=.json
+module.file_ext=.css
+module.name_mapper='^\(actions\|api\|components\|constants\|hocs\|images\|layouts\|reducers\|sass\|sockets\|stores\|types\|util\)\/\(.*\)$' -> '<PROJECT_ROOT>/src/\1/\2'
+module.name_mapper='.*\(.css\)' -> 'CSSModule'
+module.name_mapper='.*\.\(svg\|png\|jpg\|gif\)$' -> '<PROJECT_ROOT>/flow-stubs/url-loader.js'
+
+esproposal.class_static_fields=enable
+suppress_type=$FlowIssue
+suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
+
+[version]
+^0.46.0
